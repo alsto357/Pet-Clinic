@@ -1,0 +1,33 @@
+# Starter pipeline
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '- task: AzureFileCopy@4
+  inputs:
+    SourcePath: 'C:\Users\alexander.r.stovall\Desktop/testfile.txt'
+    azureSubscription: 'Pay-As-You-Go(c97a3080-4c3d-44c5-89f6-5fe16c84a2a8)'
+    Destination: 'AzureVMs'
+    storage: 'cs710037ffeaca60688'
+    resourceGroup: 'test2-rg'
+    vmsAdminUserName: 'stovid'
+    vmsAdminPassword: 'vbJiA4s$3fdgthyesd'
+    TargetPath: '/home/stovid/''
+    Contents: '**'
+    TargetFolder: '/home/stovid/landingzone'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
